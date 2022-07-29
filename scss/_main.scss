@@ -1,0 +1,265 @@
+/*-------------------------------*/
+.title {
+	font-family: 'Sailec';
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.2;
+	letter-spacing: 0.25px;
+	color: #4A4A4A;
+}
+.subtitle {
+	line-height: 1.6;
+	color: #434A54;
+}
+.link {
+	line-height: 1.6;
+	letter-spacing: 0.25px;
+	color: #1D6FF3;
+	&:hover {
+		text-decoration: underline;
+		color: #14438f;
+	}
+}
+.title, .subtitle, .link {
+	margin: 0px 0px 15px 0px;
+}
+.exploring, .research, .learn {
+	padding: 15px;
+	margin: 15px 0px;
+	box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.37);
+	background-color: #FFFFFF;
+	&__picture {
+		text-align: center;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+.exploring {
+	&__title {
+		font-size: 23px;
+	}
+}
+
+.research {}
+
+.learn {}
+
+.blog {
+	margin: 15px 0px;
+		&__title {
+			font-size: 23px;
+			text-align: center;
+			margin: 10px 0px;
+			padding: 10px 0px;
+			box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.37);
+			background-color: #FFFFFF;
+		}
+
+		&__items {
+			text-align: center;
+		}
+
+		&__item {
+			padding: 10px;
+			margin: 0px 0px 15px 0px;
+			box-shadow: 5px 5px 11px rgba(0, 0, 0, 0.37);
+			background-color: #FFFFFF;
+		}
+
+		&__image {
+			img {
+				max-width: 100%;
+			}
+		}
+
+		&__text {
+			padding: 17px 20px;
+		}
+
+		&__text-title {
+			font-size: 24px;
+			line-height: 1.3;
+			margin: 0px 0px 15px 0px;
+		}
+
+		&__text-subtitle {
+			border-top: 1px solid rgba(0, 0, 0, 0.37);
+			font-size: 15px;
+			line-height: 1.7;
+		}
+}
+
+.subscribe {
+	padding: 15px;
+		&__title {
+			margin: 0px 0px 20px 0px;
+		}
+
+		&__follow {
+			padding: 20px 0px;
+		}
+
+		&__email {
+			padding: 0px 15px 0px 5px;
+			color: #979797;
+			border-radius: 4px 0px 0px 4px;
+			&:focus {
+					box-shadow: 0px 0px 30px #5c5f64;
+			}
+		}
+
+		&__button {
+			background-color: #1D6FF3;
+			border: 1px solid rgba(0, 0, 0, 0.05);
+			border-radius: 0px 4px 4px 0px;
+			color: #FFFFFF;
+		}
+
+		&__email,&__button {
+			font-size: 18px;
+			line-height: 2.4;
+			letter-spacing: 0.25px;
+			transition: 500ms;
+		}
+}
+@media (max-width:767px) {
+	.subscribe{
+		&__email, &__button {
+			width: 100%;
+		}
+		&__email {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+	.exploring, .learn {
+		display: grid;
+		align-items: start;
+		grid-template: auto / 1fr;
+		&__picture {
+			grid-row: 1 / 2;
+		}
+	}
+}
+@media (min-width:768px) {
+	.main {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-auto-flow: row;
+	}
+
+	.exploring, .research, .learn {
+		display: grid;
+		grid-template: auto / repeat(auto-fit,minmax(354px,1fr));
+		justify-items: center;
+		align-items: center;
+		padding: 50px 15px;
+		&__picture {
+			position: relative;
+			padding: 50%;
+			img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	.exploring {
+		&__text {
+			padding: 0px 10px 0px 55px;
+		}
+
+		&__title {
+			font-size: 48px;
+		}
+	}
+	.research {
+		&__text {
+			padding: 0px 112px 0px 15px;
+		}
+		&__title {
+			padding: 0px 15px 0px 0px;
+		}
+	}
+	.learn {
+		&__text {
+			padding: 0px 30px 0px 55px;
+		}
+	}
+	.blog {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		&__title {
+			font-size: 36px;
+		}
+		&__items {
+			display: grid;
+			gap: 15px;
+			grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+		}
+		&__item{
+			transition: 500ms;
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+	.subscribe {
+		min-height: 300px;
+		display: grid;
+		grid-template: auto / repeat(auto-fit,minmax(370px, 1fr));
+		padding: 30px 60px;
+		&__text {
+			padding: 50px 47px 0px 0px;
+		}
+		&__follow {
+			padding: 55px 0px;
+		}
+		&__form {
+			display: grid;
+			grid-template: auto / minmax(300px, auto) minmax(122px, auto);
+		}
+		&__button {
+			&:hover {
+				box-shadow: 0px 0px 30px #1D6FF3;
+			}
+		}
+	}
+}
+@media (min-width: 375px) {
+	.title {
+		font-size: 28px;
+	}
+	.subtitle {
+		font-size: 15px;
+	}
+	.link {
+		font-size: 17px;
+	}
+	.exploring {
+		&__title {
+			font-size: 30px;
+			}
+	}
+}
+@media (min-width: 425px) {
+	.title {
+		font-size: 30px;
+	}
+	.subtitle {
+		font-size: 16px;
+	}
+	.link {
+		font-size: 18px;
+	}
+	.exploring {
+		&__title {
+			font-size: 33px;
+			}
+	}
+}

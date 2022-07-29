@@ -1,0 +1,41 @@
+//Fonts
+@import "_fonts.scss";
+//CSS-Reset
+@import "_cssreset.scss";
+//blocks
+/*--------------------------------------*/
+body {
+	font-family: Titillium Web;
+	font-weight: 400;
+
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden;
+	padding: 0px 15px;
+	background-color: #EEEEEE;
+}
+
+@import "_header.scss";
+@import "_main.scss";
+@import "_footer.scss";
+
+@media (min-width: 768px) {
+	.wrapper {
+		display: grid;
+		grid-template-rows: minmax(16px, auto) 1fr minmax(240px, auto);
+		grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+	}
+	.header {
+		grid-row: 1 / 2;
+		grid-column: 2 / 3;
+	}
+	.main {
+		grid-row: 2 / 3;
+		grid-column: 2 / 3;
+	}
+	.footer {
+		grid-row: 3 / 4;
+		grid-column: 2 / 3;
+	}
+}
